@@ -1,6 +1,6 @@
 # 短網址生成器
 
-![Index page about Restaurant List](./2-3 A11.JPG)
+![Index page about Shortener URL](./2-3%20A11.jpg)
 
 ## 介紹
 
@@ -11,7 +11,7 @@
 ## 功能
 
 - 輸入網址將網址縮短
-- 縮短後，按下COPY鍵可複製短網址
+- 縮短後，按下 COPY 鍵可複製短網址
 - 輸入短網址將連結至原網址
 
 ---
