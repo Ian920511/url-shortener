@@ -10,7 +10,16 @@ route.get("/", (req, res) => {
 
 route.post("/", (req, res) => {
   const url = req.body.url;
-  const randomURL = shorterURL(5);
+  let randomURL = shorterURL(5);
+
+  while (true) {
+    URL.findOne({ shorterURL: randomURL }).then((data) => {
+      if (data) {
+        return (randomURL = shorterURL(5));
+      }
+    });
+    break;
+  }
 
   URL.findOne({ url })
     .then((data) => {
