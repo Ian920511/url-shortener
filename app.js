@@ -25,7 +25,7 @@ app.post("/", (req, res) => {
   URL.findOne({ url })
     .then((data) => {
       if (!data) {
-        URL.create({ url, shorterURL: randomURL });
+        return URL.create({ url, shorterURL: randomURL });
       }
       return data;
     })
