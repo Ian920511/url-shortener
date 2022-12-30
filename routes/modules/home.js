@@ -12,13 +12,16 @@ route.post("/", (req, res) => {
   const url = req.body.url;
   let randomURL = shorterURL(5);
 
-  while (true) {
-    URL.findOne({ shorterURL: randomURL }).then((data) => {
-      if (data) {
-        return (randomURL = shorterURL(5));
-      }
-    });
-    break;
+  function checkedURL(randomURL) {
+    URL.findOne({ shorterURL: randomURL })
+      .then((data) => {
+        if (data) {
+          randomURL = shorterURL(5);
+          checkedURL(randomURL);
+        }
+      })
+      .catch((error) => console.log(error));
+    return randomURL;
   }
 
   URL.findOne({ url })
