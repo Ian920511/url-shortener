@@ -1,8 +1,13 @@
 {{#if randomURL}}
-  <div class="container mt-5">
+  <div class="container mt-5 d-flex flex-column text-center">
     <p>Success! Please use this link:</p>
-    <a href="/{{randomURL}}">http://localhost:3000/{{randomURL}}</a>
-    <button onclick="click()" class="btn btn-primary mb-3">Copy</button>
+    <a
+      href="/{{randomURL}}"
+      id="shorturl"
+    >http://localhost:3000/{{randomURL}}</a>
+  </div>
+  <div class="text-center">
+    <button onclick="copyurl()" class="btn btn-primary mb-3">Copy</button>
   </div>
 {{else}}
   <div class="container mt-5">
