@@ -23,7 +23,7 @@ app.post("/", (req, res) => {
 
   URL.findOne({ url })
     .then((data) => (data ? data : URL.create({ url, shorterURL: randomURL })))
-    .then((data) => res.render("index"));
+    .then((data) => res.render("index", randomURL));
 });
 
 app.listen(3000, () =>

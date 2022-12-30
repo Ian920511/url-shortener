@@ -1,9 +1,30 @@
+{{#if randomURL}}
+  <div class="container mt-5">
+    <p>Success! Please use this link:</p>
+    <a href="/{{randomURL}}">http://localhost:3000/{{randomURL}}</a>
+    <button onclick="click()" class="btn btn-primary mb-3">Copy</button>
+  </div>
+{{else}}
+  <div class="container mt-5">
+    <form
+      action="/"
+      method="POST"
+      class="d-flex flex-row justify-content-center"
+    >
+      <div class="col-5">
+        <label for="inputPassword2" class="visually-hidden">Password</label>
+        <input
+          type="url"
+          placeholder="Input URL here"
+          name="url"
+          class="form-control"
+          required
+        />
+      </div>
+      <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-3">Shorten</button>
+      </div>
+    </form>
+  </div>
 
-
-<div>
-  <form action="/" method="POST">
-    <input type="url" placeholder="Input URL here" name="url" required />
-    <button type="submit">Shorten</button>
-  </form>
-
-</div>
+{{/if}}
