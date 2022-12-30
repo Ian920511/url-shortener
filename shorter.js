@@ -1,0 +1,3 @@
+function shorter() {
+  return;
+}
