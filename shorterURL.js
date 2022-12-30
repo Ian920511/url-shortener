@@ -15,4 +15,4 @@ function shorterURL(times) {
   return answer;
 }
 
-module.exports = shorter;
+module.exports = shorterURL;

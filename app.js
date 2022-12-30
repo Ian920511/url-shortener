@@ -4,6 +4,7 @@ const app = express();
 const exphbs = require("express-handlebars");
 const bodyParser = require("body-parser");
 const shorterURL = require("./shorterURL");
+const URL = require("./models/url");
 require("./config/mongoose");
 
 app.engine("handlebars", exphbs.engine());
@@ -18,7 +19,11 @@ app.get("/", (req, res) => {
 
 app.post("/", (req, res) => {
   const url = req.body.url;
-  console.log(url);
+  const randomURL = shorterURL(5);
+
+  URL.findOne({ url })
+    .then((data) => (data ? data : URL.create({ url, shorterURL: randomURL })))
+    .then((data) => res.render("index"));
 });
 
 app.listen(3000, () =>
