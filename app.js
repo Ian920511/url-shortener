@@ -3,6 +3,7 @@ const app = express();
 
 const exphbs = require("express-handlebars");
 const bodyParser = require("body-parser");
+const shorterURL = require("./shorterURL");
 require("./config/mongoose");
 
 app.engine("handlebars", exphbs.engine());

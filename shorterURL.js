@@ -3,7 +3,7 @@ function sample(collection) {
   return index;
 }
 
-function shorter(times) {
+function shorterURL(times) {
   const collection =
     "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
 
